@@ -1,0 +1,1 @@
+from livraria.models import Autor
