@@ -1,9 +1,9 @@
-from rest_framework.serializers import ModelSerializer
+from rest_framework.viewsets import ModelViewSet
 
 from livraria.models import Editora
+from livraria.serializers import EditoraSerializer
 
 
-class EditoraSerializer(ModelSerializer):
-    class Meta:
-        model = Editora
-        fields = "__all__"
+class EditoraViewSet(ModelViewSet):
+    queryset = Editora.objects.all()
+    serializer_class = EditoraSerializer

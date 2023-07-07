@@ -1,9 +1,9 @@
-from rest_framework.serializers import ModelSerializer
+from rest_framework.viewsets import ModelViewSet
 
 from livraria.models import Autor
+from livraria.serializers import AutorSerializer
 
 
-class AutorSerializer(ModelSerializer):
-    class Meta:
-        model = Autor
-        fields = "__all__"
+class AutorViewSet(ModelViewSet):
+    queryset = Autor.objects.all()
+    serializer_class = AutorSerializer

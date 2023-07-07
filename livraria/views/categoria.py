@@ -1,9 +1,9 @@
-from rest_framework.serializers import ModelSerializer
+from rest_framework.viewsets import ModelViewSet
 
 from livraria.models import Categoria
+from livraria.serializers import CategoriaSerializer
 
 
-class CategoriaSerializer(ModelSerializer):
-    class Meta:
-        model = Categoria
-        fields = "__all__"
+class CategoriaViewSet(ModelViewSet):
+    queryset = Categoria.objects.all()
+    serializer_class = CategoriaSerializer
